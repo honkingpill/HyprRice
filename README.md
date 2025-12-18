@@ -57,7 +57,7 @@ And now we making dir for trashbox in ~/.local/share/Trash/files
 ```
 mkdir -p ~/.local/share/Trash/files
 ```
-lf binds: 
+lf binds:
 up down for navigate;
 left for updir;
 right for open;
