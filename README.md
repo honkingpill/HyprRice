@@ -57,6 +57,7 @@ And now we making dir for trashbox in ~/.local/share/Trash/files
 ```
 mkdir -p ~/.local/share/Trash/files
 ```
+```
 lf binds:
 up down for navigate;
 left for updir;
@@ -80,7 +81,7 @@ bg - set wallpaper (using swww)
 v - reverse selected ( - * - - > * - * * )
 CTRL F - jump to file/folder in this dir
 g+smth = cd to ...
-
+```
 At very end of config lfrc you can add shortcuts for dirs just like map g<1> cd <2>
 On 1 you set button (for example, to get in .config I press g and after c, like get-config)
 On 2 you set file/dir (for example, ~/.config)
