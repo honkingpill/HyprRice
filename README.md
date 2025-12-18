@@ -1,5 +1,5 @@
 # HyprRice
-<img width="1920" height="1080" alt="hyprshot" src="https://github.com/honkingpill/HyprRice/images/hyprshot.png" />
+<img width="1920" height="1080" alt="hyprshot" src="https://github.com/honkingpill/HyprRice/images/hyprshot.png?raw=true" />
 Here's my ricing. im still working at configs. also gonna add configs for soft inside my rice
 Until i'm fully satisfied with my process - i'm not gonna add install guide and/or full showcase of rice
 
