@@ -57,31 +57,31 @@ And now we making dir for trashbox in ~/.local/share/Trash/files
 ```
 mkdir -p ~/.local/share/Trash/files
 ```
-```
-lf binds:
-up down for navigate;
-left for updir;
-right for open;
-au for unzip like commands;
-ae for wine run;
-. to show hidden folders;
-dd trash;
-de empty trash;
-u undo trash;
-dD is for deleting with -rf (very carefully) 
-x - cut
-y - copy
-p - paste
-R - refresh
-C - clear selected
-SPACE - select files
-mf - mkfile (using vi, vim)
-md - mkdir
-bg - set wallpaper (using swww)
-v - reverse selected ( - * - - > * - * * )
-CTRL F - jump to file/folder in this dir
-g+smth = cd to ...
-```
+
+lf binds:  
+up down for navigate;  
+left for updir;  
+right for open;  
+au for unzip like commands;  
+ae for wine run;  
+. to show hidden folders;  
+dd trash;  
+de empty trash;  
+u undo trash;  
+dD is for deleting with -rf (very carefully)   
+x - cut  
+y - copy  
+p - paste  
+R - refresh  
+C - clear selected  
+SPACE - select files  
+mf - mkfile (using vi, vim)  
+md - mkdir  
+bg - set wallpaper (using swww)  
+v - reverse selected ( - * - - > * - * * )  
+CTRL F - jump to file/folder in this dir  
+g+smth = cd to ...  
+
 At very end of config lfrc you can add shortcuts for dirs just like map g<1> cd <2>
 On 1 you set button (for example, to get in .config I press g and after c, like get-config)
 On 2 you set file/dir (for example, ~/.config)
