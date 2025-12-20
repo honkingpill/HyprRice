@@ -6,13 +6,13 @@ Until i'm fully satisfied with my process - i'm not gonna add install guide and/
 ## 14.12
  Got comfort version of Everforest color pallete. Also added config for zsh. 
 Plugins I use:
-```
-[ZSH Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-[ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-[ZSH History Substring Search](https://github.com/zsh-users/zsh-history-substring-search)
-Git
-History
-```
+
+[ZSH Autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)  
+[ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)  
+[ZSH History Substring Search](https://github.com/zsh-users/zsh-history-substring-search)  
+Git  
+History  
+
 And here's my fastfetch config (for "hello world" message in terminal)
 
 ## 18.12
