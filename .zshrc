@@ -102,5 +102,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias s="yay -Ss"
+alias i="yay -S"
+alias r="sudo pacman -R"
+alias pi="sudo pacman -S"
 fastfetch 
 echo не надо
