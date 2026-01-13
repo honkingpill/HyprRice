@@ -1,0 +1,171 @@
+# Photo preview
+set previewer ~/.config/lf/previewer.sh
+set cleaner ~/.config/lf/cleaner.sh
+
+# Basic Settings
+set hidden false
+set ignorecase true
+set icons true
+set rulerfmt "%d  |%a  |%p  |\033[7;31m %m \033[0m  |\033[7;33m %c \033[0m  |\033[7;35m %s \033[0m  |\033[7;34m %f \033[0m  |%i/%t"
+
+# == Keybindings
+
+# = Moving
+map gc cd ~/.config # config dir
+map пс cd ~/.config # config dir
+map gd cd ~/Downloads # Downloads dir
+map пв cd ~/Downloads # Downloads dir
+map gp cd ~/Pictures # Pictures dir
+map пз cd ~/Pictures # Pictures dir
+map gv cd ~/videos # Videos dir 
+map пм cd ~/videos # Videos dir
+map gs cd ~/.local/share # ProgramFiles  
+map пы cd ~/.local/share # ProgramFiles 
+map gt cd ~/.local/share/Trash/files #Trash dir 
+map пе cd ~/.local/share/Trash/files #Trash dir
+map ge cd /extra/ # Extra dir (for cross-system sharing)
+map пу cd /extra/ # Extra dir (for cross-system sharing)
+map gf cd /run/media/ # Flash drive dir 
+map па cd /run/media/ # Flash drive dir
+map пр cd ~ # Go home
+map gw cd ~/theme/wallpapers # Wallpapers dir
+map пц cd ~/theme/wallpapers # Wallpapers dir
+# = Deleting functional
+
+map d
+map dd trash
+map de $trashy empty --all
+map dD remove
+
+# = Deleting functional on ru layout
+
+map в
+map вв trash
+map ву $trashy empty --all
+map вВ remove
+
+# = Making files or dirs
+map m
+map mf mkfile
+map md mkdir
+
+# = Making on ru layout
+map ь
+map ьа mkfile
+map ьв mkdir
+
+# = Unarchiving or win exec
+map au unarchive
+map ae $wine "$f"
+
+# = Unarchiving or win exec on ru layout
+
+map фг unarchive
+map фу $wine "$f"
+
+# = Basic Functions
+
+map . set hidden!
+map p paste
+map x cut
+map y copy
+map R reload
+map <enter> open
+map C clear
+map <esc> quit
+
+# = Basic Functions on ru layout 
+
+map ю set hidden!
+map з paste
+map ч cut
+map н copy
+map К reload
+map С clear
+map й quit
+
+
+# = Set current file as swww img
+
+map bg setwallpaper
+map ип setwallpaper
+
+# ==============================
+#Custom Functions
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+map ? myhelp  # Привязываем к ?
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  #$EDITOR $ans
+  touch $ans #if u want to make files without editing it at start
+}}
+
+cmd setwallpaper ${{
+    swww img "$f"
+}}
+cmd remove ${{
+    rm -rf "$f"
+}}
+
+# Archive bindings
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.rar) unrar x "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *.tar.xz) tar -xf "$f" ;;
+      *.7z) 7z e "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+# Trash bindings
+cmd trash ${{
+  files=$(printf "$fx" | tr '\n' ';')
+  while [ "$files" ]; do
+    file=${files%%;*}
+
+    trashy put "$(basename "$file")"
+    if [ "$files" = "$file" ]; then
+      files=''
+    else
+      files="${files#*;}"
+    fi
+  done
+}}
+
+cmd open &{{
+	case $(file --mime-type -Lb $f) in
+		text/*) lf -remote "send $id \$vim \$fx";;
+		*) xdg-open "$f"
+	esac
+}}
+
+cmd on-select &{{
+    lf -remote "send $id set statfmt \"$(exa -ld --color=always "$f")\""
+}}
+
+cmd fzf_jump ${{
+    res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location')"
+    if [ -n "$res" ]; then
+        if [ -d "$res" ]; then
+            cmd="cd"
+        else
+            cmd="select"
+        fi
+        res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+        lf -remote "send $id $cmd \"$res\""
+    fi
+}}
+map <c-f> :fzf_jump
+
+# Bindings
+
