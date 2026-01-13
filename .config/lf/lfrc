@@ -1,7 +1,7 @@
 # Photo preview
 set previewer ~/.config/lf/previewer.sh
 set cleaner ~/.config/lf/cleaner.sh
-
+set info size 
 # Basic Settings
 set hidden false
 set ignorecase true
@@ -31,6 +31,10 @@ map пр cd ~ # Go home
 map gw cd ~/theme/wallpapers # Wallpapers dir
 map пц cd ~/theme/wallpapers # Wallpapers dir
 # = Deleting functional
+map gD cd /mnt/disk
+map пВ cd /mnt/disk
+map gF cd /mnt/disk/Отдел\ автоматизации/
+map пА cd /mnt/disk/Отдел\ автоматизации/
 
 map d
 map dd trash
