@@ -132,3 +132,18 @@ background-color: rgba(232, 227, 252, 0.11);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
 }
+#disk,
+#network{
+    font-size: 0.85em;
+    min-width: 35px;
+    min-height: 20px;
+}
+#cpu{
+    margin: 0 4px 0 0;
+}
+#network{
+    margin: 5px 2px 0 0;
+}
+#disk{
+    margin: 0 2px 0 0;
+}

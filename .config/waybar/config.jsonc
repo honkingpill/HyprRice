@@ -62,7 +62,8 @@
         "modules": [
             "memory",
             "network",
-            "cpu"
+            "cpu",
+            "disk"
         ]
     },
     "group/notifications":{

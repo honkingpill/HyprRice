@@ -146,7 +146,8 @@
     },
     "cpu":{
     "interval": 5,
-    "format": "{usage}%"
+    "format": "",
+    "format-alt": "{usage}%"
     },
      "hyprland/window": {
     "rotate":90,
@@ -159,5 +160,13 @@
         "format": "\udb81\udc25",
         "on-click": "wlogout -b 6",
         "tooltip": false
+    },
+    "disk":{
+        "interval": 1,
+        "format": "",
+        "format-alt": "{specific_free:.2f}",
+        "tooltip": true,
+        "tooltip-format": " {specific_total:.2f}G/{specific_used:.2f}G used",
+        "unit": "GB"
     }
 }
