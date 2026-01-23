@@ -1,0 +1,4 @@
+sudo pacman -S blueman bluez-utils bluez 
+pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber alsa-utils
+kitty waybar 
+yay -S wlogout

@@ -1,0 +1,163 @@
+//
+// .88b  d88.  .d88b.  d8888b. db    db db      d88888b .d8888. 
+// 88'YbdP`88 .8P  Y8. 88  `8D 88    88 88      88'     88'  YP 
+// 88  88  88 88    88 88   88 88    88 88      88ooooo `8bo.   
+// 88  88  88 88    88 88   88 88    88 88      88~~~~~   `Y8b. 
+// 88  88  88 `8b  d8' 88  .8D 88b  d88 88booo. 88.     db   8D 
+// YP  YP  YP  `Y88P'  Y8888D' ~Y8888P' Y88888P Y88888P `8888Y' 
+//
+// by HonkingPill (2026)
+//
+// ==============================
+{
+    // Clock module
+    "clock": {
+        "format": "{:%I\n%M\n%p}",
+        "format-alt": "{:%d\n%m\n%y}",
+        "interval": 60,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "locale": "ru_RU.UTF-8",
+        "calendar": {
+                        "mode"          : "year",
+                        "mode-mon-col"  : 4,
+                        "weeks-pos"     : "right",
+                        "on-scroll"     : 1,
+                        "format": {
+                                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                                }
+                        },
+            "actions":  {
+                        "on-click-right": "mode",   
+                        "on-scroll-up": "shift_up",
+                        "on-scroll-down": "shift_down"
+                        }
+
+    },
+        // Keyboard Layout
+    "hyprland/language": {
+        "format-en": "En",
+        "format-ru": "Ru"
+    },
+
+        // Notification button
+    "custom/notification": {
+        "tooltip": true,
+        "format": "<span size='16pt'>{icon}</span>",
+        "format-icons": {
+        "notification": "\udb80\udd78",
+        "none": "\udb80\udc9f",
+        "dnd-notification": "󰂠",
+        "dnd-none": "󰪓",
+        "inhibited-notification": "󰂛",
+        "inhibited-none": "󰪑",
+        "dnd-inhibited-notification": "󰂛",
+        "dnd-inhibited-none": "󰪑"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+        // Apps browser
+    "custom/apps": {
+        "format": "\uf40e",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+
+        // Workspaces
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "format-active": "{windows}",
+        "format-window-separator": "\n",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "title<Kitty>": "",
+            "class<Picture in Picture": "",
+            "class<firefox>": "",
+            "class<foot>": "",
+            "class<code-oss>": "\ue8da",
+            "title<.*youtube.*>": ""
+        },
+        "persistent-workspaces": {
+            "*" : [1,2,3,4], // from 1 to 4 on any monitor
+            "HDMI-A-1": [1,2,3,4], // same for hdmi
+            "DP-1": [5,6,7,8] // but 5-6-7-8 for DP-1 (i use it as main)
+        }
+    },
+        // Audio-mixer
+    "pulseaudio": {
+            "scroll-step": 1, // %, can be a float
+            "format": "{volume}%",
+            "format-bluetooth": "{volume}% {icon} {format_source}",
+            "format-bluetooth-muted": " {icon} {format_source}",
+            "format-muted": " {format_source}",
+            "format-source": "{volume}% ",
+            "format-source-muted": "",
+            "format-icons": {
+                "headphone": "",
+                "hands-free": "",
+                "headset": "",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": ["", "", ""]
+            },
+            "on-click": "pavucontrol",
+            "on-click-right": "helvum",
+            "on-click-middle": "kitty alsamixer"
+        },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "vertical"
+    },
+
+    // Network Manager
+    "network": {
+        "interval": 5,
+        "format-ethernet": "{icon}",
+        "format-wifi": "{essid} {icon}",
+        "format-icons": {
+         "wifi":["󰤟", "󰤢", "󰤥", "󰤨"],
+         "ethernet": ["\udb80\ude00"]
+        },
+        "tooltip-format-ethernet": "{ipaddr}",
+        "tooltip-format-wifi": "{ifname} @ {freguency}Ghz",
+        "format-disconnected": "󰈂",
+        "on-click-right": "kitty nmtui"
+    },
+    // Tray
+    "tray": {
+    "icon-size": 14,
+    "spacing": 5
+    },
+    // Memory module
+    "memory":{
+        "format":"{used:0.1f}G",
+        "tooltip-format":"{avail}G Avaible"
+    },
+    "cpu":{
+    "interval": 5,
+    "format": "{usage}%"
+    },
+     "hyprland/window": {
+    "rotate":90,
+    "rewrite":{
+        "(.*) — Original profile — Mozilla Firefox": "🌎 $1"
+    },
+    "max-length": 60
+    },
+    "custom/power": {
+        "format": "\udb81\udc25",
+        "on-click": "wlogout -b 6",
+        "tooltip": false
+    }
+}
