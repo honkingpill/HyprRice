@@ -88,8 +88,10 @@
         },
         "persistent-workspaces": {
             "*" : [1,2,3,4], // from 1 to 4 on any monitor
-            "HDMI-A-1": [1,2,3,4], // same for hdmi
-            "DP-1": [5,6,7,8] // but 5-6-7-8 for DP-1 (i use it as main)
+            //"HDMI-A-1": [1,2,3,4], // same for hdmi
+            //"DP-1": [5,6,7,8] // but 5-6-7-8 for DP-1 (i use it as main)
+            "DVI-D-1":[1,2,3,4],
+            "HDMI-A-1":[5,6,7,8]
         }
     },
         // Audio-mixer
