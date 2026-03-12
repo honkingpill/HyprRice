@@ -1,4 +1,4 @@
 sudo pacman -S blueman bluez-utils bluez 
 pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber alsa-utils
-kitty waybar fcitx5 fcitx5-mozc fcitx5-gtk fcitx5-qt fcitx5-configtool
+kitty waybar fcitx5 fcitx5-mozc fcitx5-gtk fcitx5-qt fcitx5-configtool syncthing obsidian
 yay -S wlogout
